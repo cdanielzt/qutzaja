@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Guillermo & Hari - Invitación de Boda</title>
+    <meta name="title" content="Guillermo & Hari - Invitación de Boda" />
+    <meta name="description"
+        content="Nos casamos el 15 de Diciembre, 2025. Es un honor para nosotros invitarte a nuestra boda. Acompáñanos en este día tan especial." />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Guillermo & Hari - Invitación de Boda 💍" />
+    <meta property="og:description"
+        content="Nos casamos el 15 de Diciembre, 2025 🎉 Es un honor para nosotros invitarte a nuestra boda. Acompáñanos en este día tan especial." />
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dzsvvhdcv/image/upload/v1760713883/memo_hari/memo_hari_1_jjepcb.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Guillermo & Hari - Invitación de Boda" />
+    <meta property="og:locale" content="es_MX" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Guillermo & Hari - Invitación de Boda 💍" />
+    <meta property="twitter:description"
+        content="Nos casamos el 15 de Diciembre, 2025 🎉 Acompáñanos en este día tan especial." />
+    <meta property="twitter:image"
+        content="https://res.cloudinary.com/dzsvvhdcv/image/upload/v1760713883/memo_hari/memo_hari_1_jjepcb.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=REM:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="public/favicon.ico">
+
+    <!-- Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/main.js"></script>
+</head>
+
+<body class="max-w-5xl mx-auto bg-gray-100">
+    <!-- Reproductor de Música -->
+    <div class="fixed top-4 right-4 z-50">
+        <div
+            class="bg-card/95 backdrop-blur-sm rounded-full shadow-2xl border-2 border-accent/30 p-3 flex items-center gap-3 transition-all hover:shadow-xl">
+            <button id="playPauseBtn"
+                class="w-12 h-12 rounded-full bg-accent hover:bg-accent/80 transition-all flex items-center justify-center group">
+                <svg id="playIcon" class="w-6 h-6 text-foreground" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                <svg id="pauseIcon" class="w-6 h-6 text-foreground hidden" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                </svg>
+            </button>
+            <div class="pr-2 hidden md:block">
+                <p class="text-xs text-muted-foreground font-serif music-title">Nuestra canción</p>
+                <div class="flex items-center gap-2">
+                    <input type="range" id="progressBar" value="0" max="100"
+                        class="w-24 h-1 bg-secondary rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent">
+                    <span id="timeDisplay" class="text-xs text-foreground font-medium">0:00</span>
+                </div>
+            </div>
+            <button id="volumeBtn"
+                class="w-8 h-8 rounded-full hover:bg-secondary/50 transition-all hidden md:flex items-center justify-center">
+                <svg id="volumeIcon" class="w-5 h-5 text-foreground" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="weddingMusic"></audio>
+
+    <div data-slot="card"
+        class="text-card-foreground flex flex-col gap-6 rounded-xl border pb-6 overflow-hidden border-none shadow-2xl bg-card">
+
+        <div class="relative" id="stars-background" style="background-color: #09122C;">
+            <div class="relative pt-12 md:pt-16 pb-8 md:pb-12 px-4 md:px-6 text-center z-10">
+                <h2 class="text-lg md:text-5xl lg:text-6xl text-white/90 font-light tracking-wide leading-relaxed">
+                    In qo txokine tiʼja <br> tuʼn tpona toj qʼij lu.
+                </h2>
+            </div>
+
+            <div class="relative py-6 md:py-16 px-4 md:px-6 text-center z-10">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Main Title: 20 - The Hero -->
+                    <div class="mb-0">
+                        <h1 class="font-sans text-9xl md:text-[14rem] lg:text-[18rem] xl:text-[22rem] font-bold bg-gradient-to-b from-[#FFD700] via-[#FFA500] to-[#D4AF37] bg-clip-text text-transparent tracking-tight leading-none drop-shadow-[0_0_40px_rgba(255,215,0,0.6)]">
+                            20
+                        </h1>
+                    </div>
+                    
+                    <!-- años and De Mam - Elegant Arrangement -->
+                    <div class="mt-0 flex flex-col items-center gap-3 md:gap-2 mb-6 md:mb-8">
+                        <h2 class="font-sans text-4xl md:text-6xl lg:text-7xl text-white/95 font-light tracking-wide">
+                            años
+                        </h2>
+                        <div class="h-px w-24 md:w-32 bg-gradient-to-r from-transparent via-[#FFD700]/40 to-transparent"></div>
+                        <h3 class="font-sans text-2xl md:text-4xl lg:text-5xl text-white/90 font-normal tracking-[0.15em] uppercase">
+                            De Mam
+                        </h3>
+                    </div>
+
+                    <!-- Date and Time Card -->
+                    <div class="mx-auto max-w-2xl md:max-w-3xl">
+                        <div class="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-[#FFD700]/30 shadow-[0_8px_32px_rgba(255,215,0,0.15)]">
+                            <!-- Date Layout: Day of Week | Day Number | Month -->
+                            <div class="flex items-center justify-center gap-4 md:gap-8 mb-4 md:mb-6">
+                                <!-- Day of Week (Left) -->
+                                <div class="flex flex-col items-center">
+                                    <div class="h-px w-full bg-[#FFD700]/60 mb-2"></div>
+                                    <div class="text-sm md:text-base lg:text-lg text-white/90 tracking-widest uppercase">
+                                        Lunes
+                                    </div>
+                                    <div class="h-px w-full bg-[#FFD700]/60 mt-2"></div>
+                                </div>
+                                
+                                <!-- Day Number (Center) -->
+                                <div class="flex flex-col items-center">
+                                    <div class="text-4xl md:text-4xl lg:text-5xl font-bold text-gray-300 tracking-tight leading-none">
+                                        29
+                                    </div>
+                                </div>
+                                
+                                <!-- Month (Right) -->
+                                <div class="flex flex-col items-center">
+                                    <div class="h-px w-full bg-[#FFD700]/60 mb-2"></div>
+                                    <div class="text-sm md:text-base lg:text-lg text-white/90 tracking-widest uppercase">
+                                        DICIEMBRE
+                                    </div>
+                                    <div class="h-px w-full bg-[#FFD700]/60 mt-2"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Time -->
+                            <div class="flex items-center justify-center gap-2 pt-4 border-t border-[#FFD700]/30">
+                                <div class="h-px w-12 md:w-16 bg-gradient-to-r from-transparent via-[#FFD700]/50 to-transparent"></div>
+                                <div class="text-lg md:text-2xl lg:text-3xl font-light text-[#FFD700] tracking-wider">
+                                    6:00 PM
+                                </div>
+                                <div class="h-px w-12 md:w-16 bg-gradient-to-r from-transparent via-[#FFD700]/50 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Cuenta Regresiva -->
+            <div class="relative py-8 md:py-16 px-4 md:px-6 z-10">
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-4 gap-2 md:gap-4 lg:gap-6 max-w-3xl mx-auto">
+                        <!-- Días -->
+                        <div class="bg-gradient-to-br from-[#FFD700]/10 via-[#FFD700]/5 to-transparent rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-[#FFD700]/20 backdrop-blur-md transition-all hover:border-[#FFD700]/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                            <div class="text-center">
+                                <div id="days" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
+                                <div class="text-[10px] md:text-sm lg:text-base text-white/80 font-light tracking-wide">Días</div>
+                            </div>
+                        </div>
+    
+                        <!-- Horas -->
+                        <div class="bg-gradient-to-br from-[#FFD700]/10 via-[#FFD700]/5 to-transparent rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-[#FFD700]/20 backdrop-blur-md transition-all hover:border-[#FFD700]/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                            <div class="text-center">
+                                <div id="hours" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
+                                <div class="text-[10px] md:text-sm lg:text-base text-white/80 font-light tracking-wide">Horas</div>
+                            </div>
+                        </div>
+    
+                        <!-- Minutos -->
+                        <div class="bg-gradient-to-br from-[#FFD700]/10 via-[#FFD700]/5 to-transparent rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-[#FFD700]/20 backdrop-blur-md transition-all hover:border-[#FFD700]/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                            <div class="text-center">
+                                <div id="minutes" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
+                                <div class="text-[10px] md:text-sm lg:text-base text-white/80 font-light tracking-wide">Minutos</div>
+                            </div>
+                        </div>
+    
+                        <!-- Segundos -->
+                        <div class="bg-gradient-to-br from-[#FFD700]/10 via-[#FFD700]/5 to-transparent rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-[#FFD700]/20 backdrop-blur-md transition-all hover:border-[#FFD700]/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                            <div class="text-center">
+                                <div id="seconds" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
+                                <div class="text-[10px] md:text-sm lg:text-base text-white/80 font-light tracking-wide">Segundos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto px-6 text-center space-y-4">
+            <div>
+                <p class="text-xl leading-relaxed tracking-wide text-foreground">Qaj tún tok bʼuyin qʼibʼ</p>
+                <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
+                    Deseamos reunirnos 
+                </p>
+            </div>
+            <div>
+                <p class="text-xl leading-relaxed tracking-wide text-foreground">
+                    Toj qonikʼan lu
+                </p>
+                <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
+                    En esta noche
+                </p>
+            </div>
+            <div>
+                <p class="text-xl leading-relaxed tracking-wide text-foreground">
+                    Tuʼn tzaj qʼnan tej xi tzyet
+                </p>
+                <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
+                    Para recordar el inicio
+                </p>
+            </div>
+            <div>
+                <p class="text-xl leading-relaxed tracking-wide text-foreground">
+                    Aju taqʼen te pakbʼabʼil ex qe chmabil toj tyol mam
+                </p>
+                <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
+                    De la obra de predicación y reuniones en el idioma Mam
+                </p>
+            </div>
+        </div>
+
+        <!-- Primer Versículo Bíblico -->
+        <div class="bg-secondary/10 py-16 px-6">
+            <div class="max-w-3xl mx-auto text-center relative">
+                <svg class="w-12 h-12 mx-auto mb-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                </svg>
+                <blockquote class="space-y-6">
+                    <p class="text-2xl md:text-3xl font-serif italic text-foreground leading-relaxed">
+                        "Vi a otro ángel que volaba en medio del cielo. Tenía buenas noticias eternas que anunciarles a los que viven en la tierra: a toda nación, tribu, lengua y pueblo"
+                    </p>
+                    <cite class="block text-sm font-medium text-gray-400 not-italic tracking-wider">
+                        — Apocalipsis 14:6
+                    </cite>
+                </blockquote>
+                <svg class="w-12 h-12 mx-auto mt-6 text-gray-300 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="bg-secondary/20 py-12 px-6">
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-8 h-8 text-white">
+                            <path d="M8 2v4"></path>
+                            <path d="M16 2v4"></path>
+                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="text-3xl md:text-4xl text-white font-semibold">
+                            ¡El Evento del Año!
+                        </h3>
+                        <p class="text-sm text-gray-400">(Por que no hubo otros Jeje)</p>
+                    </div>
+
+                    <div class="inline-block bg-white/10 border-2 border-white/30 rounded-2xl px-8 py-4 shadow-lg">
+                        <p class="text-sm font-serif text-gray-400 mb-2 tracking-wider uppercase">
+                            Guarda la fecha
+                        </p>
+                        <p class="text-2xl md:text-3xl font-bold text-white mb-1">
+                            29 de Diciembre de 2025
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Single Event -->
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-card rounded-3xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow">
+                        <!-- Time -->
+                        <div class="flex items-center justify-center gap-3 mb-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-6 h-6 text-white flex-shrink-0">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <p class="text-3xl md:text-4xl font-bold text-white">6:00 PM</p>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="w-6 h-6 text-white">
+                                        <path
+                                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                        </path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-serif text-xl md:text-2xl text-white mb-2">Salón de eventos Emporio</h4>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Salón+de+eventos+Emporio" target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 text-sm text-white hover:text-white/80 transition-colors font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                    <path
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Ver en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confirmación -->
+                <div class="text-center pt-12">
+
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed max-w-2xl mx-auto">
+                        Es importante tu confirmación pero más aun tu cooperación Jeje.
+                    </p>
+
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed max-w-2xl mx-auto">
+                        Enserio en realidad <br> queremos que estes ahí.
+                    </p>
+
+                    <a href="https://api.whatsapp.com/send?phone=529624564816&text=Si%20voy%2C%20por%20que%20no%20tuve%20dinero%20para%20irme%20de%20vacaciones"
+                        target="_blank" rel="noopener noreferrer" data-slot="button"
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-12 rounded-md has-[>svg]:px-4 bg-white/20 hover:bg-white/30 text-white font-medium px-8 py-6 text-lg border border-white/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Confirmar Asistencia
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mapa de Ubicación -->
+        <div class=" py-16 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-3xl md:text-4xl text-foreground mb-4">
+                        Para que no te pierdas
+                    </h3>
+                    <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-2">
+                        Salón de eventos Emporio
+                    </p>
+                </div>
+
+                <div class="bg-card rounded-2xl shadow-xl overflow-hidden border-2 border-white/20">
+                    <div class="relative w-full" style="padding-bottom: 75%;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3855.707778888277!2d-92.25211172525553!3d14.897609869736762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e0f0061fc6d67%3A0xcc37726d1ae563a1!2sSal%C3%B3n%20Emporio!5e0!3m2!1sen!2smx!4v1763435218908!5m2!1sen!2smx" class="absolute top-0 left-0 w-full h-full" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="https://maps.google.com/?q=Salón+de+eventos+Emporio" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/20 hover:bg-white/30 text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg border border-white/30">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Abrir en Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Código de Vestimenta -->
+        <div class="bg-secondary/10 py-16 px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-4mb-6">
+                        <svg class="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-semibold text-foreground mb-6">
+                        Código de Vestimenta
+                    </h3>
+
+                    <div class="max-w-md mx-auto mb-8">
+                        <div class="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-3xl p-4 md:p-8 border-2 border-white/30 shadow-[0_8px_32px_rgba(255,255,255,0.1)]">
+                            <p class="text-xl text-foreground font-bold text-center tracking-wide uppercase">✨ De Gala ✨</p>
+                        </div>
+                    </div>
+
+                    <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                        Tranquilo, no es alfombra roja… pero sí es noche de verse elegante.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action - Confirmar Asistencia -->
+        <div class="bg-secondary/10 py-16 md:py-20 px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="mb-8">
+                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+                        Queremos verte allí
+                    </h3>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto mb-2">
+                        No dejes que pasen otros 20 años 
+                    </p>
+                </div>
+
+                <div class="mt-10">
+                    <a href="https://api.whatsapp.com/send?phone=529624564816&text=Si%20voy%2C%20por%20que%20no%20tuve%20dinero%20para%20irme%20de%20vacaciones"
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-3 px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-[#FFD700] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FFD700] text-[#09122C] font-bold text-lg md:text-xl rounded-2xl shadow-[0_8px_32px_rgba(255,215,0,0.4)] hover:shadow-[0_12px_40px_rgba(255,215,0,0.6)] transition-all duration-300 transform hover:scale-105">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Confirmar Mi Asistencia
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
