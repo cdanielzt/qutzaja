@@ -5,10 +5,10 @@
 // 👇 CAMBIA ESTA URL POR LA URL DE TU CANCIÓN
 export const MUSIC_CONFIG = {
   // URL de tu canción
-  songUrl: 'https://res.cloudinary.com/dzsvvhdcv/video/upload/v1760713894/memo_hari/Bruno_Mars_-_Marry_You_Official_Lyric_Video_-_Bruno_Mars_xmp4rf.mp3',
+  songUrl: 'https://res.cloudinary.com/dzsvvhdcv/video/upload/v1763436865/Royalty_Free_Positive_Chillout_Music_uixoju.mp3',
   
   // Título de la canción (opcional)
-  songTitle: 'Nuestra canción',
+  songTitle: '',
   
   // ¿Quieres que la música empiece automáticamente?
   autoplay: false,
