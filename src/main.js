@@ -96,6 +96,46 @@ window.copyAccountNumber = function() {
   });
 };
 
+// Funcionalidad para copiar CLABE
+window.copyClabe = function() {
+  const clabeNumber = document.getElementById('clabeNumber').textContent.trim();
+  const copyBtn = document.getElementById('copyClabeBtn');
+  const copyIcon = document.getElementById('copyIcon');
+  const copyText = document.getElementById('copyText');
+  
+  const originalIconHTML = copyIcon.innerHTML;
+  const originalText = copyText.textContent;
+  
+  navigator.clipboard.writeText(clabeNumber).then(() => {
+    // Cambiar icono a checkmark
+    copyIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>';
+    copyText.textContent = '¡Copiado!';
+    copyBtn.classList.add('bg-green-500/20', 'border-green-500/40');
+    
+    setTimeout(() => {
+      copyIcon.innerHTML = originalIconHTML;
+      copyText.textContent = originalText;
+      copyBtn.classList.remove('bg-green-500/20', 'border-green-500/40');
+    }, 2000);
+  }).catch(err => {
+    console.error('Error al copiar:', err);
+    // Fallback: seleccionar el texto
+    const range = document.createRange();
+    range.selectNode(document.getElementById('clabeNumber'));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    try {
+      document.execCommand('copy');
+      copyText.textContent = '¡Copiado!';
+      setTimeout(() => {
+        copyText.textContent = originalText;
+      }, 2000);
+    } catch (fallbackErr) {
+      alert('CLABE: ' + clabeNumber);
+    }
+  });
+};
+
 // Cuenta Regresiva
 document.addEventListener('DOMContentLoaded', () => {
   // Fecha del evento: 15 de diciembre de 2025 a las 5:00 PM
