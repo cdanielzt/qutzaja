@@ -65,7 +65,7 @@
     <audio id="weddingMusic"></audio>
 
     <div data-slot="card"
-        class="text-card-foreground flex flex-col gap-6 rounded-xl border pb-6 overflow-hidden border-none shadow-2xl bg-card">
+        class="text-card-foreground flex flex-col gap-6 rounded-xl border pb-6 overflow-hidden border-none  bg-card">
 
         <div class="relative" id="stars-background" style="background-color: #09122C;">
             <div class="relative pt-12 md:pt-16 pb-8 md:pb-12 px-4 md:px-6 text-center z-10">
@@ -96,16 +96,16 @@
 
                     <!-- Date and Time Card -->
                     <div class="mx-auto max-w-2xl md:max-w-3xl">
-                        <div class="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-[#FFD700]/30 shadow-[0_8px_32px_rgba(255,215,0,0.15)]">
+                        <div class="bg-white/[0.02] backdrop-blur-sm rounded-3xl p-6 md:p-10">
                             <!-- Date Layout: Day of Week | Day Number | Month -->
                             <div class="flex items-center justify-center gap-4 md:gap-8 mb-4 md:mb-6">
                                 <!-- Day of Week (Left) -->
                                 <div class="flex flex-col items-center">
-                                    <div class="h-px w-full bg-[#FFD700]/60 mb-2"></div>
+                                    <div class="h-px w-full bg-white/20 mb-2"></div>
                                     <div class="text-sm md:text-base lg:text-lg text-white/90 tracking-widest uppercase">
                                         Lunes
                                     </div>
-                                    <div class="h-px w-full bg-[#FFD700]/60 mt-2"></div>
+                                    <div class="h-px w-full bg-white/20 mt-2"></div>
                                 </div>
                                 
                                 <!-- Day Number (Center) -->
@@ -117,21 +117,19 @@
                                 
                                 <!-- Month (Right) -->
                                 <div class="flex flex-col items-center">
-                                    <div class="h-px w-full bg-[#FFD700]/60 mb-2"></div>
+                                    <div class="h-px w-full bg-white/20 mb-2"></div>
                                     <div class="text-sm md:text-base lg:text-lg text-white/90 tracking-widest uppercase">
                                         DICIEMBRE
                                     </div>
-                                    <div class="h-px w-full bg-[#FFD700]/60 mt-2"></div>
+                                    <div class="h-px w-full bg-white/20 mt-2"></div>
                                 </div>
                             </div>
                             
                             <!-- Time -->
-                            <div class="flex items-center justify-center gap-2 pt-4 border-t border-[#FFD700]/30">
-                                <div class="h-px w-12 md:w-16 bg-gradient-to-r from-transparent via-[#FFD700]/50 to-transparent"></div>
-                                <div class="text-lg md:text-2xl lg:text-3xl font-light text-[#FFD700] tracking-wider">
+                            <div class="flex items-center justify-center gap-2 pt-4 border-t border-white/10">
+                                <div class="text-lg md:text-2xl lg:text-3xl font-light text-white/90 tracking-wider">
                                     6:00 PM
                                 </div>
-                                <div class="h-px w-12 md:w-16 bg-gradient-to-r from-transparent via-[#FFD700]/50 to-transparent"></div>
                             </div>
                         </div>
                     </div>
@@ -143,34 +141,34 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="grid grid-cols-4 gap-2 md:gap-4 lg:gap-6 max-w-3xl mx-auto">
                         <!-- Días -->
-                        <div class="bg-gradient-to-br from-[#FFD700]/10 via-[#FFD700]/5 to-transparent rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-[#FFD700]/20 backdrop-blur-md transition-all hover:border-[#FFD700]/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                        <div class="bg-white/[0.02] backdrop-blur-sm rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-white/10">
                             <div class="text-center">
-                                <div id="days" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
-                                <div class="text-[10px] md:text-sm lg:text-base text-white/80 font-light tracking-wide">Días</div>
+                                <div id="days" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/90 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
+                                <div class="text-[10px] md:text-sm lg:text-base text-white/70 font-light tracking-wide">Días</div>
                             </div>
                         </div>
     
                         <!-- Horas -->
-                        <div class="bg-gradient-to-br from-[#FFD700]/10 via-[#FFD700]/5 to-transparent rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-[#FFD700]/20 backdrop-blur-md transition-all hover:border-[#FFD700]/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                        <div class="bg-white/[0.02] backdrop-blur-sm rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-white/10">
                             <div class="text-center">
-                                <div id="hours" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
-                                <div class="text-[10px] md:text-sm lg:text-base text-white/80 font-light tracking-wide">Horas</div>
+                                <div id="hours" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/90 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
+                                <div class="text-[10px] md:text-sm lg:text-base text-white/70 font-light tracking-wide">Horas</div>
                             </div>
                         </div>
     
                         <!-- Minutos -->
-                        <div class="bg-gradient-to-br from-[#FFD700]/10 via-[#FFD700]/5 to-transparent rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-[#FFD700]/20 backdrop-blur-md transition-all hover:border-[#FFD700]/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                        <div class="bg-white/[0.02] backdrop-blur-sm rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-white/10">
                             <div class="text-center">
-                                <div id="minutes" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
-                                <div class="text-[10px] md:text-sm lg:text-base text-white/80 font-light tracking-wide">Minutos</div>
+                                <div id="minutes" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/90 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
+                                <div class="text-[10px] md:text-sm lg:text-base text-white/70 font-light tracking-wide">Minutos</div>
                             </div>
                         </div>
     
                         <!-- Segundos -->
-                        <div class="bg-gradient-to-br from-[#FFD700]/10 via-[#FFD700]/5 to-transparent rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-[#FFD700]/20 backdrop-blur-md transition-all hover:border-[#FFD700]/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                        <div class="bg-white/[0.02] backdrop-blur-sm rounded-2xl md:rounded-3xl p-3 md:p-5 lg:p-6 border border-white/10">
                             <div class="text-center">
-                                <div id="seconds" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/80 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
-                                <div class="text-[10px] md:text-sm lg:text-base text-white/80 font-light tracking-wide">Segundos</div>
+                                <div id="seconds" class="text-xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-white to-white/90 bg-clip-text text-transparent mb-1 md:mb-2">00</div>
+                                <div class="text-[10px] md:text-sm lg:text-base text-white/70 font-light tracking-wide">Segundos</div>
                             </div>
                         </div>
                     </div>
@@ -178,37 +176,23 @@
             </div>
         </div>
 
-        <div class="max-w-2xl mx-auto px-6 text-center space-y-4">
+        <div class="max-w-2xl mx-auto px-6 py-6 text-center space-y-8">
             <div>
-                <p class="text-xl leading-relaxed tracking-wide text-foreground">Qaj tún tok bʼuyin qʼibʼ</p>
+                <p class="text-xl leading-relaxed tracking-wide text-foreground">Atxix jun k'al ab'q'i o tzyet jun k'ulb'il t'un pakbantz tyol Aman Jehová tok qyol. Iktzun ten tpakbantz tyol Aman Jehová tuj tnam Tapachula ex tuj kyaqil tw'itz tx'tx'ox jatum tzaj que kyaqil</p>
                 <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
-                    Deseamos reunirnos 
+                    Hace 20 años inició la mayor y única campaña de predicacion en el idioma Mam hecha hasta ese entonces a nivel mundial y fue acá en Tapachula donde todo eso comenzó.
                 </p>
             </div>
             <div>
                 <p class="text-xl leading-relaxed tracking-wide text-foreground">
-                    Toj qonikʼan lu
+                    Chjonte nok t'un txtalb'il qajaw Jehová. Ax ikyx ten teye txime o tajb'eye tu'n tajb'eye tu'n tpakbanjtz aju profecía:
                 </p>
                 <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
-                    En esta noche
+                    Gracias a la bendición y guía de Jehová pero también a la decisión que tú tomaste pudiste participar y ser parte de esta profecía que se cumpliría en los últimos días:
                 </p>
             </div>
-            <div>
-                <p class="text-xl leading-relaxed tracking-wide text-foreground">
-                    Tuʼn tzaj qʼnan tej xi tzyet
-                </p>
-                <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
-                    Para recordar el inicio
-                </p>
-            </div>
-            <div>
-                <p class="text-xl leading-relaxed tracking-wide text-foreground">
-                    Aju taqʼen te pakbʼabʼil ex qe chmabil toj tyol mam
-                </p>
-                <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
-                    De la obra de predicación y reuniones en el idioma Mam
-                </p>
-            </div>
+
+ 
         </div>
 
         <!-- Primer Versículo Bíblico -->
@@ -230,8 +214,19 @@
                 </svg>
             </div>
         </div>
+        
+        <div class="max-w-2xl mx-auto px-6 py-6 text-center space-y-8">
+            <div>
+                <p class="text-xl leading-relaxed tracking-wide text-foreground">
+                    Iktzun tenju amb'il lu kajb'ile tu'n  mojb'an q'i'n tu'n tzaj q'nan aju tzul te tibajxi junx
+                </p>
+                <p class="text-sm md:text-base leading-relaxed tracking-wide text-muted-foreground mt-1">
+                    Por eso en esta ocasión queremos reunirnos y recordar ese acontecimiento juntos.
+                </p>
+            </div>
+        </div>
 
-        <div class="bg-secondary/20 py-12 px-6">
+        <div class="py-12 px-6">
             <div class="max-w-4xl mx-auto space-y-8">
                 <div class="text-center mb-12">
                     <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-6">
@@ -264,7 +259,7 @@
 
                 <!-- Single Event -->
                 <div class="max-w-2xl mx-auto">
-                    <div class="bg-card rounded-3xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow">
+                    <div class="bg-white/[0.02] backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-white/10">
                         <!-- Time -->
                         <div class="flex items-center justify-center gap-3 mb-8">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
